@@ -1,18 +1,22 @@
+from pathlib import Path
 import unittest
 from unittest import mock
-from cleantech100 import (scrape_list, scrape_company_details,
-                          compile_list_and_details, write_companies_to_csv)
+from scripts.cleantech100 import scrape_list
 
 
 # Thanks to https://stackoverflow.com/a/28507806 for the code below which I
-# adapted to mock requests.content.
+# adapted in order to mock requests.content.
 def mocked_requests_get(*args, **kwargs):
     class MockResponse:
         def __init__(self, content, status_code):
             self.content = content
             self.status_code = status_code
 
-    with open('cleantech100_tests_data/the-list.html', 'r') as f:
+    test_dir = Path(__file__).resolve().parent
+    # the_list_file has mocked HTML from https://i3connect.com/gct100/the-list
+    the_list_file = test_dir.joinpath('cleantech100_tests_data/the-list.html')
+
+    with open(the_list_file, 'r') as f:
         the_list_html = f.read()
 
     if args[0] == 'https://i3connect.com/gct100/the-list':
@@ -25,7 +29,10 @@ def mocked_requests_get(*args, **kwargs):
 
 class ScrapeListTests(unittest.TestCase):
 
-    @mock.patch('cleantech100.requests.get', side_effect=mocked_requests_get)
+    @mock.patch(
+        'scripts.cleantech100.requests.get',
+        side_effect=mocked_requests_get
+    )
     def test_company_0_keys_and_values(self, mock_get):
 
         returned_companies = scrape_list()
@@ -44,7 +51,10 @@ class ScrapeListTests(unittest.TestCase):
             company_0['company_video'],
         )
 
-    @mock.patch('cleantech100.requests.get', side_effect=mocked_requests_get)
+    @mock.patch(
+        'scripts.cleantech100.requests.get',
+        side_effect=mocked_requests_get
+    )
     def test_company_100_keys_and_values(self, mock_get):
 
         returned_companies = scrape_list()
