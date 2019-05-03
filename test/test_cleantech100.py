@@ -55,7 +55,7 @@ class ScrapeListTests(unittest.TestCase):
         'scripts.cleantech100.requests.get',
         side_effect=mocked_requests_get
     )
-    def test_company_100_keys_and_values(self, mock_get):
+    def test_company_99_keys_and_values(self, mock_get):
 
         returned_companies = scrape_list()
         company_99 = returned_companies[99]
@@ -72,6 +72,15 @@ class ScrapeListTests(unittest.TestCase):
             '\n',
             company_99['company_video']
         )
+
+    @mock.patch(
+        'scripts.cleantech100.requests.get',
+        side_effect=mocked_requests_get
+    )
+    def test_100_companies(self, mock_get):
+
+        returned_companies = scrape_list()
+        self.assertEqual(100, len(returned_companies))
 
 
 if __name__ == '__main__':
