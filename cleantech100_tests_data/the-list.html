@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"1e414b687e","applicationID":"1265394","transactionName":"IQtYTEpXXFxVQhsHUwELQ1ZMF1dTRG8FVgA9CF9LTGdEVV1A","queueTime":0,"applicationTime":1135,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQUEUlBVGwICUlRRDgU="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(18),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(19),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var x=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof x&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof x&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(21)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(21)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(21)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(21)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(21)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var x=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(){var t=window.NREUM,n=t.info.accountID||null,e=t.info.agentID||null,r=t.info.trustKey||null,i="btoa"in window&&"function"==typeof window.btoa;if(!n||!e||!i)return null;var a={v:[0,1],d:{ty:"Browser",ac:n,ap:e,id:o.generateCatId(),tr:o.generateCatId(),ti:Date.now()}};return r&&n!==r&&(a.d.tk=r),btoa(JSON.stringify(a))}var o=t(16);n.exports={generateTraceHeader:r}},{}],11:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(l[r],this.listener,!1);n.aborted||(e.duration=s.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==n.status&&(n.status=0):a(this,t),e.cbTime=this.cbTime,d.emit("xhr-done",[t],t),c("xhr",[n,e,this.startTime]))}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return w(r)}function i(t,n){var e=f(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}function a(t,n){t.params.status=n.status;var e=o(n,t.lastSize);if(e&&(t.metrics.rxSize=e),t.sameOrigin){var r=n.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var s=t("loader");if(s.xhrWrappable){var c=t("handle"),f=t(12),u=t(10).generateTraceHeader,d=t("ee"),l=["load","error","abort","timeout"],p=l.length,h=t("id"),m=t(15),w=t(14),v=window.XMLHttpRequest;s.features.xhr=!0,t(9),d.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,n.loadCaptureCalled=!1,t.addEventListener("load",function(e){a(n,t)},!1),m&&(m>34||m<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),d.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),d.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var e=!1;if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(e=!!NREUM.init.distributed_tracing.enabled),e&&this.sameOrigin){var r=u();r&&n.setRequestHeader("newrelic",r)}}),d.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=w(r);i&&(e.txSize=i)}this.startTime=s.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{d.emit("internal-error",[e])}catch(r){}}};for(var a=0;a<p;a++)n.addEventListener(l[a],this.listener,!1)}),d.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),d.on("xhr-load-added",function(t,n){var e=""+h(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),d.on("xhr-load-removed",function(t,n){var e=""+h(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),d.on("addEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&d.emit("xhr-load-added",[t[1],t[2]],n)}),d.on("removeEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&d.emit("xhr-load-removed",[t[1],t[2]],n)}),d.on("fn-start",function(t,n,e){n instanceof v&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=s.now()))}),d.on("fn-end",function(t,n){this.xhrCbStart&&d.emit("xhr-cb-time",[s.now()-this.xhrCbStart,this.onload,n],n)})}},{}],12:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],13:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(18),s=t(19),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],14:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],15:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],16:[function(t,n,e){function r(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(n=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&Uint8Array&&(n=r.getRandomValues(new Uint8Array(31)));for(var o=[],i=0;i<16;i++)o.push(t().toString(16));return o.join("")}n.exports={generateUuid:r,generateCatId:o}},{}],17:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],18:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],19:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],20:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],21:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(19),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([x,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function w(t){return d[t]=d[t]||o(e)}function v(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},x={on:p,addEventListener:p,removeEventListener:h,emit:e,get:w,listeners:m,context:n,buffer:v,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(18),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=b.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return R.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(18),u=t("ee"),d=t(17),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:x,userAgent:d};t(13),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,R=t(20)},{}]},{},["loader",2,11,4,3]);</script>
+  <title>i3 Connect - Insight and Data Across the Global Clean Technology Marketplace</title>
+  <meta name="description" content="i3 is the innovation network that drives sustainability. i3 helps investors and corporate strategics find and connect with emerging technologies globally.">
+
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="iLzCqGD/9h7mJqn54JG2NgAya5WX4UhaWuMPLIzR5sg=" name="csrf-token" />
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-963086-9']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
+</script>
+
+
+  <meta id="viewport" name="viewport" content="width=320">
+
+  <link href="/assets/css_reset/css_reset-f7cb6d069f5adde7a0cb9a258bb62321.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/gct-9ea87965c6e94b8b92303b7caeab82bb.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/gct_100_list-dba88c0dab4b46872a95c38e03e7cd90.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/modal_popup-2b4b8077dbf22a3ab035efe4872763a3.css" media="screen" rel="stylesheet" type="text/css" />
+
+  <script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+  <script src="/assets/jquery/jquery-ui.min-c4e06910ad06aea523168ea9a3cb3b32.js" type="text/javascript"></script>
+  <script src="/assets/modernizr/modernizr-f957782671f3c2a9b80b9694f1651d9f.js" type="text/javascript"></script>
+  <script src="/assets/modal_popup-1e8e0199f31c646ece76de1b91f175cb.js" type="text/javascript"></script>
+  <script src="/assets/main-67afeadda89d9223c55030fe9a6fa018.js" type="text/javascript"></script>
+  <script src="/assets/gct_100-cd522863c2a1803a58a81e83423c994e.js" type="text/javascript"></script>
+</head>
+
+<body id="gct_100_list" style="overflow-x:hidden;">
+<div id="overlay" style="display: none;"></div>
+
+  <!-- Header -->
+  <div id="header-wrapper">
+    <header id="header" class="section">
+      <a href="/" id="logo">i3</a>
+      <a href="#mobile-menu" id="mobile-menu-button">Menu</a>
+      <div id="header-account-wrapper">
+        
+
+<div class="about-us-coverage-section">
+  <div class="about-us-section">
+    <a href="#" data-href="#about-us-panel" class="about-us-trigger panel-trigger">
+      <span class="user-name">ABOUT US</span>
+    </a>
+    <div id="about-us-panel" class="panel-target">
+      <span class="arrow"></span>
+      <ul class="about-us-actions">
+        <li><a href="http://www.cleantech.com/about/team-board-of-directors-advisors/" target="_blank"><span class="user-name">TEAM</span></a></li>
+        <li><a href="/about_us_partners">PARTNERS</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="coverage-section">
+    <a href="#" data-href="#coverage-panel" class="coverage-trigger panel-trigger">
+      <span class="user-name">COVERAGE</span>
+    </a>
+    <div id="coverage-panel" class="panel-target">
+      <span class="arrow"></span>
+      <ul class="coverage-actions">
+          <li><a href="/tags/advanced-materials/677/activity" target="_blank">ADVANCED MATERIALS</a></li>
+          <li><a href="/tags/agriculture-food/1533/activity" target="_blank">AGRICULTURE &amp; FOOD</a></li>
+          <li><a href="/tags/air/744/activity" target="_blank">AIR</a></li>
+          <li><a href="/tags/biofuels-biochemicals/767/activity" target="_blank">BIOFUELS &amp; BIOCHEMICALS</a></li>
+          <li><a href="/tags/biomass-generation/807/activity" target="_blank">BIOMASS GENERATION</a></li>
+          <li><a href="/tags/conventional-fuels/1299/activity" target="_blank">CONVENTIONAL FUELS</a></li>
+          <li><a href="/tags/energy-efficiency/830/activity" target="_blank">ENERGY EFFICIENCY</a></li>
+          <li><a href="/tags/energy-storage/881/activity" target="_blank">ENERGY STORAGE</a></li>
+          <li><a href="/tags/fuel-cells-hydrogen/913/activity" target="_blank">FUEL CELLS &amp; HYDROGEN</a></li>
+          <li><a href="/tags/geothermal/917/activity" target="_blank">GEOTHERMAL</a></li>
+          <li><a href="/tags/hydro-marine-power/927/activity" target="_blank">HYDRO &amp; MARINE POWER</a></li>
+          <li><a href="/tags/nuclear/941/activity" target="_blank">NUCLEAR</a></li>
+          <li><a href="/tag/other-cleantech" target="_blank">OTHER CLEANTECH</a></li>
+          <li><a href="/tags/recycling-waste/945/activity" target="_blank">RECYCLING &amp; WASTE</a></li>
+          <li><a href="/tags/smart-grid/1010/activity" target="_blank">SMART GRID</a></li>
+          <li><a href="/tags/solar/1062/activity" target="_blank">SOLAR</a></li>
+          <li><a href="/tags/transportation/1126/activity" target="_blank">TRANSPORTATION</a></li>
+          <li><a href="/tags/water-wastewater/1181/activity" target="_blank">WATER &amp; WASTEWATER</a></li>
+          <li><a href="/tags/wind/1230/activity" target="_blank">WIND</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+<div class="gct-section" style="width: 107px;">
+    <a href="#" data-href="#gct-panel" class="gct-trigger panel-trigger">
+      <span class="user-name">PROGRAMS</span>
+    </a>
+    <div id="gct-panel" class="panel-target">
+      <span class="arrow"></span>
+      <ul class="gct-actions">
+		<li><a href="/gct100" target="_blank"><span class="user-name">GLOBAL CLEANTECH 100</span></a></li>
+		<li><a href="/gcii" target="_blank"><span class="user-name">GLOBAL CLEANTECH INNOVATION INDEX</span></a></li>
+        <li><a href="/apac25" target="_blank"><span class="user-name">APAC 25</span></a></li>
+      </ul>
+    </div>
+  </div>
+    
+  
+  <div class="ctg-section">
+    <a href="http://www.cleantech.com" target="_blank"><span class="user-name">CLEANTECH.COM</span></a>
+  </div>  
+  
+  
+ 	
+</div>
+
+
+
+        <div class="sign-up-section">
+        <form accept-charset="UTF-8" action="/account/signin" class="new_user" id="header-account" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="iLzCqGD/9h7mJqn54JG2NgAya5WX4UhaWuMPLIzR5sg=" /></div>
+          <input id="ref" name="ref" type="hidden" />
+          <input class="apply_to" id="apply_to" name="apply_to" type="hidden" />
+          <!-- remote_ip: 69.119.114.69 -->
+          <div class="form-block">
+            <label>Email</label>
+            <input class="text-input" id="user_email" name="user[email]" size="30" tabindex="1" type="email" />
+          </div>
+
+          <div class="form-block">
+            <label>Password</label>
+            <a href="/account/forgot_password" class="forgot-pass-link">Forgot password?</a>
+            <input class="text-input" id="user_password" name="user[password]" size="30" tabindex="2" type="password" />
+          </div>
+          <input class="sign-in-link" name="commit" type="submit" value="Sign In" />
+</form>        </div>
+
+
+      </div>
+    </header>
+  </div> <!-- END Header -->
+
+
+  <!-- Slider -->
+<div id="slider-wrapper">
+  <div id="slider" class="section">
+    <div class="headers-2015">
+      <h1>2019 Global Cleantech 100</h1>
+
+		  	<p>
+	 			 In total, 13,900 companies from 93 countries were nominated for this year’s Global Cleantech 100. Nominees were weighted and scored to create a short list of 308 companies reviewed by the 87 members of Cleantech Group’s Expert Panel. The final list contains the companies best positioned to solve the future’s cleantech challenges and make an impact on the market. <strong><a href="http://info.cleantech.com/2019-Global-Cleantech-100-Report-Download.html" target="_blank">Get the complete report</a></strong>.
+	 		</p>
+	  <ul class="gct-menu">
+  <li class=""><a href="/gct100" class="menu-link">CLEANTECH 100</a></li>
+  <li class="active"><a href="/gct100/the-list" class="menu-link">THE LIST</a></li>
+  <li class=""><a href="/gct100/award" class="menu-link">AWARDS</a></li>
+  <li class=""><a href="/gct100/watch-list" class="menu-link">ONES TO WATCH</a></li>
+  <li class=""><a href="/gct100/hall-of-fame" class="menu-link">HALL OF FAME</a></li>  
+  <li class=""><a href="/gct100/methodology" class="menu-link">PROCESS</a></li>
+  <li class=""><a href="/gct100/panelist" class="menu-link">EXPERT PANEL</a></li>
+  <li class=""><a href="/gct100/reports" class="menu-link">ALL REPORTS</a></li>
+	  <li class=""><a href="/gct100/nominate" class="menu-link" target="_blank">NOMINATE</a></li>  
+</ul>
+	  	  
+	  <div style="float:right;">
+<label style="font-weight:bold; color:#00202D;">List year:</label>
+		<select id="gct_100_year_toggle" data-gct-toggle-value="main-list">	
+
+					<option value="2019" selected>2019</option>
+					<option value="2018">2018</option>				
+					<option value="2017">2017</option>				
+					<option value="2015">2015</option>				
+					<option value="2014">2014</option>				
+					<option value="2013">2013</option>				
+					<option value="2012">2012</option>				
+					<option value="2011">2011</option>				
+					<option value="2010">2010</option>				
+					<option value="2009">2009</option>				
+		  </select>
+
+</div>
+<div style="padding-bottom:15px;"></div>
+
+    </div>
+
+    <div class="gct-table">
+      <table id="gct-table-data">
+        <thead>
+          <tr id="gct-table-data-header-row">
+            <td style="width:290px;">COMPANY</td>
+            <td id="gct100_mainlist_geography" style="width:173px;">GEOGRAPHY<div id="gct100_mainlist_geography_icon" class="white_arrow"></div></td>
+            <td style="width:129px;">FUNDING</td>
+            <td id="gct100_mainlist_sector" style="width:203px;">SECTOR<div id="gct100_mainlist_sector_icon" class="white_arrow"></div></td>
+            <td style="width:194px;">YEAR FOUNDED</td>
+			<td style="display:none;">REGION</td>
+			<td style="width:201px;"></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="logo">
+              <a href="/company/actility" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_actility_logo_new" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/84/4684/standard_Actility_logo_new.jpg" /></div>
+</a>            </td>
+            <td><span>France</span></td>
+            <td><span>$113.2M</span></td>
+            <td><span>smart grid</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="Actility" data-video-iframe="https://www.youtube.com/embed/yIDDl65hOvI">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/aerofarms" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_aerofarms" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/76/76/standard_aerofarms.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$98.7M</span></td>
+            <td><span>agriculture &amp; food</span></td>
+            <td><span>2004</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/agriprotein" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_agriprotein-logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/13/385013/standard_agriprotein-logo.png" /></div>
+</a>            </td>
+            <td><span>South Africa</span></td>
+            <td><span>$143.5M</span></td>
+            <td><span>agriculture &amp; food</span></td>
+            <td><span>2008</span></td>
+            <td style="display:none;"><span>Africa</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="AgriProtein" data-video-iframe=" https://www.youtube.com/watch?v=7g8kllwSGv8">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/ampaire" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_ampaire_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/45/410545/standard_AMPAIRE_LOGO.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$3.75M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2016</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/advanced-microgrid-solutions" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_ams" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/35/388335/standard_ams.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$52.82M</span></td>
+            <td><span>energy storage</span></td>
+            <td><span>2013</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="AMS" data-video-iframe="https://www.youtube.com/embed/i-rLMMWFfwo">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/apeel-sciences" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_logo3" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/89/389989/standard_logo3.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$110M</span></td>
+            <td><span>agriculture &amp; food</span></td>
+            <td><span>2012</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/aperio-systems" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_aperio" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/8/405808/standard_aperio.png" /></div>
+</a>            </td>
+            <td><span>Israel</span></td>
+            <td><span>$4.5M</span></td>
+            <td><span>other cleantech</span></td>
+            <td><span>2016</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/autogrid-systems" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_autogrid_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/67/18767/standard_autogrid_logo.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$73.75M</span></td>
+            <td><span>smart grid</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="AutoGrid Systems" data-video-iframe="https://www.youtube.com/embed/MIijeMOPlBY">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/avalon-battery" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_avalon_battery" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/9/396609/standard_avalon_battery.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$10.28M</span></td>
+            <td><span>energy storage</span></td>
+            <td><span>2013</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/axine-water-technologies" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_axine-water-logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/32/51732/standard_axine-water-logo.jpg" /></div>
+</a>            </td>
+            <td><span>Canada</span></td>
+            <td><span>$15.6M</span></td>
+            <td><span>water &amp; wastewater</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/azuri-technologies" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_azuri" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/91/376591/standard_azuri.PNG" /></div>
+</a>            </td>
+            <td><span>United Kingdom</span></td>
+            <td><span>$0</span></td>
+            <td><span>solar</span></td>
+            <td><span>2012</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/bboxx" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_master_bboxx_logo_small" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/99/386099/standard_master_bboxx_logo_small.png" /></div>
+</a>            </td>
+            <td><span>United Kingdom</span></td>
+            <td><span>$78.93M</span></td>
+            <td><span>smart grid</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="BBOXX" data-video-iframe="https://www.youtube.com/embed/dk5FsZCK2Qk">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/bestmile" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_bestmile_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/7/400607/standard_Bestmile_Logo.png" /></div>
+</a>            </td>
+            <td><span>Switzerland</span></td>
+            <td><span>$16.5M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2014</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/beyond-meat" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_beyond_meat" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/24/376524/standard_beyond_meat.jpg" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$95.46M</span></td>
+            <td><span>agriculture &amp; food</span></td>
+            <td><span>2009</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="Beyond Meat" data-video-iframe="https://www.youtube.com/embed/uWfEFfwzRmo">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/bidgely" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_bidgely_logo_black-blue_small" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/81/376581/standard_BIDGELY_LOGO_BLACK-BLUE_SMALL.jpg" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$51.6M</span></td>
+            <td><span>energy efficiency</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="Bidgely" data-video-iframe="https://www.youtube.com/embed/Clc012Ss9LU">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/blablacar" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_blablacar_logo_print" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/85/18985/standard_BlaBlaCar_logo_print.png" /></div>
+</a>            </td>
+            <td><span>France</span></td>
+            <td><span>$450.9M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2006</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/black-bear-carbon" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_black_bear_carbon_no_background_i3" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/14/383914/standard_Black_Bear_Carbon_No_background_i3.png" /></div>
+</a>            </td>
+            <td><span>Netherlands</span></td>
+            <td><span>$18.51M</span></td>
+            <td><span>recycling &amp; waste</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/breezometer" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_breezometer_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/56/399556/standard_BreezoMeter_Logo.jpg" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$12.55M</span></td>
+            <td><span>air</span></td>
+            <td><span>2014</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="BreezoMeter" data-video-iframe="https://www.youtube.com/embed/DJX-cnQZZKI">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/byton" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_01_byton_logo_gray" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/54/409254/standard_01_BYTON_Logo_Gray.png" /></div>
+</a>            </td>
+            <td><span>China</span></td>
+            <td><span>$750M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2016</span></td>
+            <td style="display:none;"><span>Asia Pacific</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="Byton" data-video-iframe="https://www.youtube.com/embed/mTOKZ1lqlYc">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/calysta-energy" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_calysta" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/38/382238/standard_calysta.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$88M</span></td>
+            <td><span>agriculture &amp; food</span></td>
+            <td><span>2011</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/carbon3d" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_carbon" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/50/395850/standard_carbon.jpg" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$552M</span></td>
+            <td><span>advanced materials</span></td>
+            <td><span>2013</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/carbon-lighthouse" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_cl-www-logo-dark_2x" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/60/380960/standard_CL-www-logo-dark_2x.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$34.5M</span></td>
+            <td><span>energy efficiency</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/carboncure-technologies" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_carboncure" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/75/32975/standard_CarbonCure.png" /></div>
+</a>            </td>
+            <td><span>Canada</span></td>
+            <td><span>$12.25M</span></td>
+            <td><span>advanced materials</span></td>
+            <td><span>2007</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="CarbonCure Technologies" data-video-iframe="https://www.youtube.com/embed/iEPo-9_-nfE">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/caribou-biosciences" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_caribou_new_logo-01" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/76/395876/standard_Caribou_New_Logo-01.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$44.41M</span></td>
+            <td><span>biofuels &amp; biochemicals</span></td>
+            <td><span>2011</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/cnano-technology" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="1277" src="https://s3.amazonaws.com/prod.cleantech/1277.jpeg" /></div>
+</a>            </td>
+            <td><span>China</span></td>
+            <td><span>$76M</span></td>
+            <td><span>advanced materials</span></td>
+            <td><span>2007</span></td>
+            <td style="display:none;"><span>Asia Pacific</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/cooledge-lighting" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_cool_edge_lighting_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/47/1647/standard_cool_edge_lighting_logo.png" /></div>
+</a>            </td>
+            <td><span>Canada</span></td>
+            <td><span>$41.08M</span></td>
+            <td><span>energy efficiency</span></td>
+            <td><span>2009</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/descartes-labs" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_descartes_labs" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/25/18625/standard_Descartes_Labs.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$38.3M</span></td>
+            <td><span>other cleantech</span></td>
+            <td><span>2014</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/desktop-metal" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_desktop_metal_3" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/68/398268/standard_desktop_metal_3.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$437M</span></td>
+            <td><span>advanced materials</span></td>
+            <td><span>2015</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/dmc-biotechnologies" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_dmclogo-final" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/84/407684/standard_DMClogo-Final.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$1.75M</span></td>
+            <td><span>biofuels &amp; biochemicals</span></td>
+            <td><span>2014</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/easymile" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_easymile" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/33/402633/standard_easymile.png" /></div>
+</a>            </td>
+            <td><span>France</span></td>
+            <td><span>$22.54M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2014</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/ecobee" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_ecobee" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/84/1484/standard_ecobee.jpg" /></div>
+</a>            </td>
+            <td><span>Canada</span></td>
+            <td><span>$142.2M</span></td>
+            <td><span>energy efficiency</span></td>
+            <td><span>2007</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/econic-technologies" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_econic_technologies" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/21/19621/standard_Econic_Technologies.png" /></div>
+</a>            </td>
+            <td><span>United Kingdom</span></td>
+            <td><span>$28.78M</span></td>
+            <td><span>advanced materials</span></td>
+            <td><span>2011</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/eleather" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_eleather-main-logo-2018" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/93/10893/standard_eleather-main-logo-2018.png" /></div>
+</a>            </td>
+            <td><span>United Kingdom</span></td>
+            <td><span>$126.4M</span></td>
+            <td><span>advanced materials</span></td>
+            <td><span>2006</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/electrochaea" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_picture_21" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/18/37718/standard_Picture_21.png" /></div>
+</a>            </td>
+            <td><span>Germany</span></td>
+            <td><span>$2.05M</span></td>
+            <td><span>energy storage</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/electron" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_electron-logo-main---copy" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/82/402382/standard_electron-logo-main---copy.png" /></div>
+</a>            </td>
+            <td><span>United Kingdom</span></td>
+            <td><span>$500K</span></td>
+            <td><span>other cleantech</span></td>
+            <td><span>2015</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/enbala-power-networks" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_enbala_power_networks_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/68/5968/standard_Enbala_Power_Networks_Logo.png" /></div>
+</a>            </td>
+            <td><span>Canada</span></td>
+            <td><span>$53.95M</span></td>
+            <td><span>smart grid</span></td>
+            <td><span>2003</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="Enbala Power Networks" data-video-iframe="https://www.youtube.com/embed/K_7kjXua-GM">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/epigan" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_logo_epigan-cmyk-300dpi" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/33/10833/standard_logo_epigan-CMYK-300dpi.jpg" /></div>
+</a>            </td>
+            <td><span>Belgium</span></td>
+            <td><span>$5.735M</span></td>
+            <td><span>advanced materials</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/etagen" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_etagen" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/83/376583/standard_etagen.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$108M</span></td>
+            <td><span>energy efficiency</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/farmer-s-business-network" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_fbn_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/88/389288/standard_fbn_logo.jpg" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$189.6M</span></td>
+            <td><span>agriculture &amp; food</span></td>
+            <td><span>2014</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="Farmers Business Network" data-video-iframe="https://www.youtube.com/embed/IS4KIrcRMMU">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/ferroamp-elektronik" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_ferroamp_logo_2000x523" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/98/387198/standard_ferroamp_logo_2000x523.jpg" /></div>
+</a>            </td>
+            <td><span>Sweden</span></td>
+            <td><span>$1.6M</span></td>
+            <td><span>energy storage</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/flexport" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_int_190007-fxp-profilepic-en_us-180x180__1_" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/16/400616/standard_INT_190007-FXP-profilepic-en_US-180x180__1_.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$1.906B</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2013</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/freewire-technologies" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_freewire" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/93/395893/standard_freewire.PNG" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$27.64M</span></td>
+            <td><span>energy storage</span></td>
+            <td><span>2014</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/frx-polymers" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_frx_polymers_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/82/3082/standard_FRX_Polymers_Logo.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$80.85M</span></td>
+            <td><span>advanced materials</span></td>
+            <td><span>2007</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="FRX Polymers" data-video-iframe="https://www.youtube.com/embed/Xgxuva39CvI">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/gan-systems" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_gan_systems" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/26/13326/standard_gan_systems.png" /></div>
+</a>            </td>
+            <td><span>Canada</span></td>
+            <td><span>$24M</span></td>
+            <td><span>energy efficiency</span></td>
+            <td><span>2008</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="GaN Systems" data-video-iframe="https://www.youtube.com/embed/X76Gfhh7-iA">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/glasspoint-solar" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_glasspoint_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/71/5171/standard_GlassPoint_logo.jpg" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$86.3M</span></td>
+            <td><span>solar</span></td>
+            <td><span>2008</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="GlassPoint Solar" data-video-iframe="https://www.youtube.com/embed/wbGyFj_ryYI">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/gogoro" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_gogoro_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/6/393506/standard_Gogoro_Logo.jpg" /></div>
+</a>            </td>
+            <td><span>Taiwan</span></td>
+            <td><span>$480M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2011</span></td>
+            <td style="display:none;"><span>Asia Pacific</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="Gogoro" data-video-iframe="https://www.youtube.com/embed/KNFurOtz2rY">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/greenlots" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_greenlots-logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/26/10526/standard_GreenLots-Logo.jpg" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$7M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2008</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/greensync" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_greensync_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/53/384753/standard_GreenSync_logo.png" /></div>
+</a>            </td>
+            <td><span>Australia</span></td>
+            <td><span>$12.6M</span></td>
+            <td><span>smart grid</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>Asia Pacific</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/heimdall-power" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_heimdallpower" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/56/405856/standard_heimdallpower.png" /></div>
+</a>            </td>
+            <td><span>Norway</span></td>
+            <td><span>$3.2M</span></td>
+            <td><span>smart grid</span></td>
+            <td><span>2015</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/husk-power-systems" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_husk" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/25/1025/standard_husk.png" /></div>
+</a>            </td>
+            <td><span>India</span></td>
+            <td><span>$25.63M</span></td>
+            <td><span>energy storage</span></td>
+            <td><span>2008</span></td>
+            <td style="display:none;"><span>Asia Pacific</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/hydrogenious-technologies" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_hydrogenious_technologies" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/2/399202/standard_Hydrogenious_Technologies.png" /></div>
+</a>            </td>
+            <td><span>Germany</span></td>
+            <td><span>$104M</span></td>
+            <td><span>fuel cells &amp; hydrogen</span></td>
+            <td><span>2013</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/impossible-foods" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_if_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/38/393238/standard_IF_Logo.jpg" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$183M</span></td>
+            <td><span>agriculture &amp; food</span></td>
+            <td><span>2011</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="Impossible Foods" data-video-iframe="https://www.youtube.com/embed/FjW2vNVZIhE">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/indigo" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_indigo_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/25/390625/standard_Indigo_Logo.jpg" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$616.5M</span></td>
+            <td><span>agriculture &amp; food</span></td>
+            <td><span>2013</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/innoviz-technologies" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_innoviz_technologies_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/0/400800/standard_Innoviz_Technologies_Logo.jpg" /></div>
+</a>            </td>
+            <td><span>Israel</span></td>
+            <td><span>$214M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2016</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/inventys" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_inventyslogo_colour" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/74/674/standard_InventysLogo_Colour.png" /></div>
+</a>            </td>
+            <td><span>Canada</span></td>
+            <td><span>$23.74M</span></td>
+            <td><span>air</span></td>
+            <td><span>2007</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/jin-jing-electric" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="20020" src="https://s3.amazonaws.com/prod.cleantech/20020.jpeg" /></div>
+</a>            </td>
+            <td><span>China</span></td>
+            <td><span>$17.9M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2008</span></td>
+            <td style="display:none;"><span>Asia Pacific</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/kairos-aerospace" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_kairosaerospace" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/27/406627/standard_kairosaerospace.jpg" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$12.55M</span></td>
+            <td><span>air</span></td>
+            <td><span>2014</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/kiwigrid" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_kiwigrid" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/91/29291/standard_Kiwigrid.png" /></div>
+</a>            </td>
+            <td><span>Germany</span></td>
+            <td><span>$10.79M</span></td>
+            <td><span>energy efficiency</span></td>
+            <td><span>2011</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/lilium" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_lilium_logo_black" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/53/400553/standard_Lilium_Logo_Black.png" /></div>
+</a>            </td>
+            <td><span>Germany</span></td>
+            <td><span>$100.7M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2014</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/lo3-energy" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_screen_shot_2016-06-23_at_9.55.45_am" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/34/400234/standard_Screen_Shot_2016-06-23_at_9.55.45_AM.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$5.8M</span></td>
+            <td><span>smart grid</span></td>
+            <td><span>2012</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/lyft" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_lyftpink" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/78/5578/standard_lyftpink.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$5.012B</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2007</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/m-kopa" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_m-kopa-logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/64/384364/standard_M-KOPA-LOGO.png" /></div>
+</a>            </td>
+            <td><span>Kenya</span></td>
+            <td><span>$100.2M</span></td>
+            <td><span>solar</span></td>
+            <td><span>2011</span></td>
+            <td style="display:none;"><span>Africa</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="M-KOPA Solar" data-video-iframe="https://www.youtube.com/embed/i9Wrzp29uqw">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/metamaterial" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_mti_squared" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/21/400121/standard_MTI_SQUARED.PNG" /></div>
+</a>            </td>
+            <td><span>Canada</span></td>
+            <td><span>$10.3M</span></td>
+            <td><span>advanced materials</span></td>
+            <td><span>2011</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/minesense-technologies" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_minesense" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/33/28333/standard_minesense.jpg" /></div>
+</a>            </td>
+            <td><span>Canada</span></td>
+            <td><span>$44.27M</span></td>
+            <td><span>conventional fuels</span></td>
+            <td><span>2008</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="MineSense Technologies" data-video-iframe="https://www.youtube.com/embed/1PvrnYLfXnc">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/moixa-technology" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_moixa" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/87/10987/standard_moixa.png" /></div>
+</a>            </td>
+            <td><span>United Kingdom</span></td>
+            <td><span>$9.78M</span></td>
+            <td><span>energy storage</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/moovit" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_moovit" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/41/386641/standard_moovit.png" /></div>
+</a>            </td>
+            <td><span>Israel</span></td>
+            <td><span>$131.5M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2011</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/responsiveload-ltd-rltech" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_open_energi" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/94/4694/standard_Open_Energi.jpg" /></div>
+</a>            </td>
+            <td><span>United Kingdom</span></td>
+            <td><span>$27.05M</span></td>
+            <td><span>smart grid</span></td>
+            <td><span>1999</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/optoro" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_optoro-i3" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/25/2525/standard_Optoro-i3.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$189.4M</span></td>
+            <td><span>recycling &amp; waste</span></td>
+            <td><span>2004</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/opus-one-solutions-energy-corporation" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_opusone_final_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/98/391098/standard_OpusOne_final_logo.jpg" /></div>
+</a>            </td>
+            <td><span>Canada</span></td>
+            <td><span>$5.81M</span></td>
+            <td><span>smart grid</span></td>
+            <td><span>2011</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/orbital-insight" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_orbital_logo-600x151" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/2/395802/standard_Orbital_Logo-600x151.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$78.7M</span></td>
+            <td><span>other cleantech</span></td>
+            <td><span>2013</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/organica-ecotechnologies-inc" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_organica_water" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/90/7290/standard_Organica_Water.jpg" /></div>
+</a>            </td>
+            <td><span>Hungary</span></td>
+            <td><span>$47.68M</span></td>
+            <td><span>water &amp; wastewater</span></td>
+            <td><span>1998</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="Organica Water" data-video-iframe="https://www.youtube.com/embed/gwrkr4TQlYc">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/otonomo" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_otonomo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/19/401919/standard_otonomo.png" /></div>
+</a>            </td>
+            <td><span>Israel</span></td>
+            <td><span>$53M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2015</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/peloton-tech" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_peloton-technology-new-logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/2/388802/standard_Peloton-Technology-new-logo.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$79.34M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2011</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/planet-labs" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_planet_labs_new" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/46/386746/standard_Planet_Labs_NEW.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$326.4M</span></td>
+            <td><span>other cleantech</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="Planet" data-video-iframe="https://www.youtube.com/embed/_6TF7dVXOIM">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/plenty" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_plenty_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/99/403499/standard_Plenty_logo.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$227.5M</span></td>
+            <td><span>agriculture &amp; food</span></td>
+            <td><span>2013</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/powerhive" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_ph_logo_blue_and_orange_copy" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/36/388036/standard_PH_logo_blue_and_orange_copy.jpg" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$32M</span></td>
+            <td><span>solar</span></td>
+            <td><span>2011</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/primus-power" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_primus_power_logo1" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/22/2622/standard_Primus_Power_Logo1.jpg" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$92M</span></td>
+            <td><span>energy storage</span></td>
+            <td><span>2009</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/prophesee" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_prophesee" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/19/406419/standard_prophesee.jpg" /></div>
+</a>            </td>
+            <td><span>France</span></td>
+            <td><span>$37.25M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2014</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/proterra" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_proterra_official_logo_full_color_" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/13/9913/standard_PROTERRA_OFFICIAL_LOGO_FULL_COLOR_.jpg" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$617.6M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2004</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="Proterra" data-video-iframe="https://player.vimeo.com/video/220367509">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/ridecell" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_ridecell" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/33/396633/standard_Ridecell.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$76.55M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2009</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/ripple-foods" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_ripple_foods-i3" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/57/398657/standard_Ripple_Foods-i3.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$120.6M</span></td>
+            <td><span>agriculture &amp; food</span></td>
+            <td><span>2014</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/semiosbio" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_semios" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/34/28334/standard_Semios.jpg" /></div>
+</a>            </td>
+            <td><span>Canada</span></td>
+            <td><span>$19.96M</span></td>
+            <td><span>agriculture &amp; food</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/sight-machine" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/27/395127/standard_logo.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$85.45M</span></td>
+            <td><span>other cleantech</span></td>
+            <td><span>2012</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/simple-energy" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_simple_energy" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/66/12766/standard_simple_energy.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$15.25M</span></td>
+            <td><span>energy efficiency</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/skeleton-technologies" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_skel" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/34/12634/standard_skel.png" /></div>
+</a>            </td>
+            <td><span>Germany</span></td>
+            <td><span>$46.52M</span></td>
+            <td><span>energy storage</span></td>
+            <td><span>2009</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/skyspecs" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_skyspecs" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/38/398538/standard_SkySpecs.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$12.98M</span></td>
+            <td><span>wind</span></td>
+            <td><span>2012</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/solidia-technologies" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="16853" src="https://s3.amazonaws.com/prod.cleantech/16853.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$37M</span></td>
+            <td><span>advanced materials</span></td>
+            <td><span>2008</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/me-solshare" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_solshare-logo-01_1" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/31/404731/standard_SolShare-Logo-01_1.jpg" /></div>
+</a>            </td>
+            <td><span>Bangladesh</span></td>
+            <td><span>$1.66M</span></td>
+            <td><span>solar</span></td>
+            <td><span>2014</span></td>
+            <td style="display:none;"><span>Asia Pacific</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="SOLshare" data-video-iframe="https://www.youtube.com/embed/0kz0qI8QE6A">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/sonnen" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_sonnen_batterie_logo_new" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/65/381265/standard_Sonnen_Batterie_Logo_New.png" /></div>
+</a>            </td>
+            <td><span>Germany</span></td>
+            <td><span>$165.4M</span></td>
+            <td><span>energy storage</span></td>
+            <td><span>2011</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="Sonnen" data-video-iframe="https://www.youtube.com/embed/bBuaIcUusoo">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/spark-cognition" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_sparkcognition_logo_150_green" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/20/399620/standard_SparkCognition_Logo_150_green.jpg" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$72.5M</span></td>
+            <td><span>other cleantech</span></td>
+            <td><span>2013</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/stem" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_stem_logo_" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/15/9515/standard_Stem_Logo_.jpg" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$202.9M</span></td>
+            <td><span>energy storage</span></td>
+            <td><span>2009</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/sunfire" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_sunfire-i3" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/8/381808/standard_Sunfire-i3.jpg" /></div>
+</a>            </td>
+            <td><span>Germany</span></td>
+            <td><span>$54.67M</span></td>
+            <td><span>fuel cells &amp; hydrogen</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/tado" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_logo-tado" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/27/19527/standard_logo-tado.png" /></div>
+</a>            </td>
+            <td><span>Germany</span></td>
+            <td><span>$107.5M</span></td>
+            <td><span>energy efficiency</span></td>
+            <td><span>2011</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+	            	<span class="gct-video-link" data-video-name="tado" data-video-iframe="https://www.youtube.com/embed/tiWM--L3gSM">Video</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/terramera-499" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_screen_shot_2014-02-26_at_11.00.14_am" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/9/388109/standard_Screen_Shot_2014-02-26_at_11.00.14_AM.png" /></div>
+</a>            </td>
+            <td><span>Canada</span></td>
+            <td><span>$10M</span></td>
+            <td><span>biofuels &amp; biochemicals</span></td>
+            <td><span>2009</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/thermondo" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_thermondo_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/43/385243/standard_thermondo_logo.png" /></div>
+</a>            </td>
+            <td><span>Germany</span></td>
+            <td><span>$56.98M</span></td>
+            <td><span>energy efficiency</span></td>
+            <td><span>2012</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/trace-genomics" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_tracegenomics" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/62/405662/standard_tracegenomics.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$18.88M</span></td>
+            <td><span>agriculture &amp; food</span></td>
+            <td><span>2015</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/ubitricity" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_ubitricity_logo_rgb" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/88/2588/standard_ubitricity_Logo_RGB.png" /></div>
+</a>            </td>
+            <td><span>Germany</span></td>
+            <td><span>$35.5M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2008</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/volta-charging" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_834519743be97679980eb2e362193dc7-1025x333" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/24/390524/standard_834519743be97679980eb2e362193dc7-1025x333.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$48.38M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2010</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/voltus" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_voltus" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/17/406617/standard_voltus.png" /></div>
+</a>            </td>
+            <td><span>United States</span></td>
+            <td><span>$10.1M</span></td>
+            <td><span>smart grid</span></td>
+            <td><span>2016</span></td>
+            <td style="display:none;"><span>North America</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td class="logo">
+              <a href="/company/vulog" target="_blank">
+                <div class="company-image thumb thumb-60"><img alt="Standard_vulog_logo" src="https://s3.amazonaws.com/i3.cleantech/uploads/company/company_logo/90/5690/standard_Vulog_Logo.jpg" /></div>
+</a>            </td>
+            <td><span>France</span></td>
+            <td><span>$30.98M</span></td>
+            <td><span>transportation</span></td>
+            <td><span>2006</span></td>
+            <td style="display:none;"><span>Europe &amp; Israel</span></td>
+            <td>
+            </td>
+          </tr>
+          <tr id="gct-table-no-results">
+          	<td colspan="7">No results found.</td>
+          </tr>
+        </tbody>
+      </table>
+    
+	<div id="gct-video-popup" class="popup-window">
+		<div class="tile-header">
+			<span id="video-title"></span>
+			<div class="tile-header-icons">
+				<img alt="Cancelicon_blue_22x22px" src="/assets/newdesign/CancelIcon_Blue_22x22px-1b4efe54069be5ce31172728dc952c48.png" style="width:28px; height:28px;" />
+			</div>
+		</div>
+		<div>
+			<iframe id="gct-video-iframe" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+	
+    </div>
+
+		<div class="download-pdf" style="margin-top:30px;"><a href="http://info.cleantech.com/2019-Global-Cleantech-100-Report-Download.html" class="orange-btn" target="_blank">DOWNLOAD FULL REPORT</a></div>
+	
+    <div class="clear"></div>
+  </div>
+</div> <!-- END Slider -->
+
+<fieldset id="geography_cb_set">
+	<ul id="geography_filter">
+		<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="Global" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text" style="color:#EE6119;">Global</span></label></li>		
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="Africa" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">Africa</span></label></li>	
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="Asia Pacific" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">Asia Pacific</span></label></li>	
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="Europe &amp; Israel" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">Europe &amp; Israel</span></label></li>	
+				<li class="gct100_filter_list_item" data-gct-filter-value="North America" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">North America</span></label></li>
+	</ul>
+</fieldset>
+
+
+<fieldset id="sector_cb_set">
+	<ul id="sector_filter">
+		<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="All sectors" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text" style="color:#EE6119;">All sectors</span></label></li>	
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="advanced materials" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">advanced materials</span></label></li>
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="agriculture &amp; food" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">agriculture &amp; food</span></label></li>
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="air" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">air</span></label></li>
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="biofuels &amp; biochemicals" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">biofuels &amp; biochemicals</span></label></li>
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="conventional fuels" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">conventional fuels</span></label></li>
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="energy efficiency" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">energy efficiency</span></label></li>
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="energy storage" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">energy storage</span></label></li>
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="fuel cells &amp; hydrogen" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">fuel cells &amp; hydrogen</span></label></li>
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="other cleantech" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">other cleantech</span></label></li>
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="recycling &amp; waste" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">recycling &amp; waste</span></label></li>
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="smart grid" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">smart grid</span></label></li>
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="solar" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">solar</span></label></li>
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="transportation" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">transportation</span></label></li>
+				<li class="gct100_filter_list_item" style="border-bottom-style:none;" data-gct-filter-value="water &amp; wastewater" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">water &amp; wastewater</span></label></li>
+				<li class="gct100_filter_list_item" data-gct-filter-value="wind" data-gct-filter-enabled="false"><label class="gct100_filter_label"><span class="gct100_filter_label_text">wind</span></label></li>
+	</ul>
+</fieldset>
+  <!-- Footer -->
+  <div id="footer-wrapper">
+    <footer id="footer" class="section">
+      <ul id="footer-menu">
+      </ul>
+      <a href="https://twitter.com/i3Connect" class="tw-follow" target="_blank">Follow i3</a>
+
+      <div class="clear-desktop"></div>
+      <a href="http://www.cleantech.com" id="cleantech-logo" rel="nofollow" target="_blank"></a>
+
+      <ul id="tos-menu">
+
+        <li>&copy; 2019 Cleantech Group</li>
+        <li><a href="/sitemap.html">Site Map</a></li>
+        <li><a href="http://www.cleantech.com/terms-of-use/" rel="nofollow" target="_blank">Terms Of Use</a></li>
+        <li><a href="http://www.cleantech.com/privacy-policy/" rel="nofollow" target="_blank">Privacy Policy</a></li>
+      </ul>
+      <div class='clear'></div>
+    </footer>
+  </div><!-- END Footer -->
+
+
+<p style="font-weight: 100; visibility: hidden;height: 0px;font-size: 0px;">Preload svg text font</p>
+
+
+
+</body>
+</html>
