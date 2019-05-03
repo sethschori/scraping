@@ -60,6 +60,11 @@ def scrape_list():
     for row in table.tbody.find_all('tr'):
         company = {}
         index = 0
+        if 'id' in row.attrs and row.attrs['id'] == 'gct-table-no-results':
+            # Last row of table should be skipped because it's just got this:
+            # <tr id="gct-table-no-results">
+            #           	<td colspan="7">No results found.</td>
+            continue
         for cell in row.find_all('td'):
             # co_key is the key to use within company dict,
             # e.g. company[co_key] could point to company['cleantech_url']
@@ -146,7 +151,6 @@ def scrape_company_details(url):
 def compile_list_and_details():
     """Compile list of companies and their details, return list of dicts."""
     list_of_companies = scrape_list()
-    del list_of_companies[-1]  # Last list element is blank, so delete it.
     list_of_companies_with_details = []
     counter = 1
     for company in list_of_companies:
