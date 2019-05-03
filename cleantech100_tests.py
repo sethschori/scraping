@@ -32,7 +32,7 @@ class ScrapeListTests(unittest.TestCase):
         company_0 = returned_companies[0]
         self.assertEqual(
             'https://i3connect.com/company/actility',
-            company_0['cleantech_url'],
+            company_0['cleantech_url']
         )
         self.assertEqual('France', company_0['company_country'])
         self.assertEqual('$113.2M', company_0['company_funding'])
@@ -60,7 +60,7 @@ class ScrapeListTests(unittest.TestCase):
         self.assertEqual('Europe & Israel', company_99['company_region'])
         self.assertEqual(
             '\n',
-            company_99['company_video'],
+            company_99['company_video']
         )
 
 
