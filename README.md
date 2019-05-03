@@ -1,5 +1,6 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Build Status](https://travis-ci.com/sethschori/scraping.svg?branch=master)](https://travis-ci.com/sethschori/scraping)
+[![Updates](https://pyup.io/repos/github/sethschori/scraping/shield.svg)](https://pyup.io/repos/github/sethschori/scraping)
 
 ## Web scraping scripts
 
